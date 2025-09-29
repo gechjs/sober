@@ -1,0 +1,173 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+  background: black;
+  color: #fff;
+  padding: 60px 20px 30px;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footerLogo {
+  flex: 1;
+  min-width: 300px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logoIcon {
+  color: #6aa84f;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footerLogo p {
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  transform: translateY(-3px);
+}
+
+.footerLinks {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.linkGroup h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #ff9e01;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.linkGroup h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #4a86e8, #6aa84f);
+}
+
+.linkGroup ul {
+  list-style: none;
+}
+
+.linkGroup li {
+  margin-bottom: 10px;
+}
+
+.linkGroup a,
+.linkGroup button {
+  color: #ccc;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  text-align: left;
+  padding: 0;
+}
+
+.linkGroup a:hover,
+.linkGroup button:hover {
+  color: #ff9e01;
+}
+
+.contactInfoList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contactInfoList i {
+  color: #ff9e01;
+  width: 20px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  color: #ccc;
+}
+
+.copyright p {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 992px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerLinks {
+    justify-content: flex-start;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerLinks {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .linkGroup {
+    width: 100%;
+  }
+}

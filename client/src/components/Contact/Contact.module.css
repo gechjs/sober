@@ -1,0 +1,346 @@
+.contact {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ececef;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #64ffda, #6aa84f);
+  margin: 15px auto;
+  border-radius: 3px;
+  animation: expand 1s ease forwards;
+}
+
+@keyframes expand {
+  from { width: 0; }
+  to { width: 100px; }
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.formColumn, .infoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Styling */
+.formCard1 {
+  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  border-radius: 22px;
+  transition: all 0.3s;
+  padding: 3px;
+  height: 100%;
+}
+
+.formCard1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.formCard2 {
+  border-radius: 20px;
+  transition: all 0.2s;
+  background-color: #171717;
+  overflow: hidden;
+  height: 100%;
+}
+
+.formCard2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.formHeading {
+  text-align: center;
+  margin: 2em;
+  color: #64ffda;
+  font-size: 1.2em;
+  background-color: transparent;
+  align-self: center;
+}
+
+.formField {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 1em;
+
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.inputField {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ccd6f6;
+  padding-inline: 1em;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.inputField::placeholder {
+  color: #8892b0;
+}
+
+textarea.inputField {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.sendMessageBtn {
+  cursor: pointer;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #64ffda;
+  font-weight: bold;
+  outline: 1px solid #64ffda;
+  transition: all ease-in-out 0.3s;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.sendMessageBtn:hover:not(:disabled) {
+  transition: all ease-in-out 0.3s;
+  background-color: #64ffda;
+  color: #000;
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.sendMessageBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Info Section Styling */
+.infoCard1 {
+  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  border-radius: 22px;
+  transition: all 0.3s;
+  padding: 3px;
+  height: 100%;
+}
+
+.infoCard1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.infoCard2 {
+  border-radius: 20px;
+  transition: all 0.2s;
+  background-color: #171717;
+  overflow: hidden;
+  height: 100%;
+}
+
+.infoCard2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.infoBox {
+  padding: 40px;
+  border-radius: 16px;
+  flex: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infoHeader h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #64ffda;
+  margin-bottom: 15px;
+}
+
+.infoHeader p {
+  color: #8892b0;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.infoIcon {
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  color: #fff;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  transition: transform 0.3s ease;
+}
+
+.infoItem:hover .infoIcon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.infoContent h4 {
+  margin-bottom: 8px;
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.infoContent p {
+  color: #8892b0;
+  line-height: 1.6;
+}
+
+.hoursList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #8892b0;
+}
+
+.hoursList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+}
+
+.hoursList li:last-child {
+  border-bottom: none;
+}
+
+.successMessage, .errorMessage {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.successMessage {
+  background: rgba(46, 125, 50, 0.2);
+  color: #4caf50;
+  border-left: 6px solid #4caf50;
+}
+
+.errorMessage {
+  background: rgba(211, 47, 47, 0.2);
+  color: #f44336;
+  border-left: 6px solid #f44336;
+}
+
+@media (max-width: 992px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .formCard1, .infoCard1 {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 70px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .infoBox {
+    padding: 30px;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .infoIcon {
+    margin-bottom: 8px;
+  }
+  
+  .form {
+    padding-inline: 1em;
+  }
+  
+  .infoHeader h3 {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,672 @@
+/* src/components/Requirements/Requirements.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.requirements {
+  background: linear-gradient(
+      135deg,
+    rgba(12, 14, 16, 0.51) 0%,
+    rgba(40, 60, 34, 0.1) 100%
+    ),;
+    /* url("../../assets/Leonardo_Phoenix_10_Give_me_an_amazing_Americanstandard_home_w_3.jpg") no-repeat
+      center center/cover; */
+  color: #fff;
+  
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floatingCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(74, 134, 232, 0.15) 0%,
+    transparent 70%
+  );
+  top: 15%;
+  left: 10%;
+  transition: transform 0.3s ease-out;
+}
+
+.floatingCircle2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(106, 168, 79, 0.1) 0%,
+    transparent 70%
+  );
+  bottom: 20%;
+  right: 15%;
+  transition: transform 0.3s ease-out;
+}
+
+.floatingCircle3 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 5%;
+  transition: transform 0.3s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.mainTitle {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleUnderline {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #4a86e8,
+    #6aa84f,
+    transparent
+  );
+  border-radius: 2px;
+}
+
+.mainSubtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  padding: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabButton {
+  padding: 15px 30px;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.tabButton:hover {
+  color: #fff;
+}
+
+.tabButton.active {
+  color: #fff;
+}
+
+.tabHighlight {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  border-radius: 50px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tabButton.active .tabHighlight {
+  opacity: 1;
+}
+
+.tabIcon {
+  font-size: 18px;
+}
+
+.tabLabel {
+  position: relative;
+}
+
+.requirementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.requirementCard {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: fadeInUp 0.6s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.requirementCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4a86e8, #6aa84f);
+  transition: width 0.3s ease;
+}
+
+.requirementCard:hover::before {
+  width: 100%;
+  opacity: 0.05;
+}
+
+.requirementCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.requirementIconWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.requirementIcon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.requirementCard:hover .requirementIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.requirementCard p {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.requirementHoverEffect {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 134, 232, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.requirementCard:hover .requirementHoverEffect {
+  opacity: 1;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.6s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featureImageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.featureImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featureCard:hover .featureImageContainer img {
+  transform: scale(1.1);
+}
+
+.featureOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.featureIconCircle {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.featureCard:hover .featureIconCircle {
+  transform: translateX(-50%) rotate(15deg) scale(1.1);
+}
+
+.featureText {
+  padding: 40px 25px 25px;
+  text-align: center;
+}
+
+.featureText h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+}
+
+.featureText p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.featureHoverEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(106, 168, 79, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.featureCard:hover .featureHoverEffect {
+  opacity: 1;
+}
+
+.faqGrid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faqCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.faqHeader {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #f8f9fa;
+  position: relative;
+  z-index: 1;
+}
+
+.faqHeader h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.faqCard:hover .faqHeader h3 {
+  color: #4a86e8;
+}
+
+.faqToggle {
+  color: #4a86e8;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faqCard.open .faqToggle {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faqCard.open .faqAnswer {
+  padding: 0 25px 25px;
+  max-height: 300px;
+}
+
+.faqAnswer p {
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.faqCardHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 134, 232, 0.05) 0%,
+    rgba(106, 168, 79, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.faqCard:hover .faqCardHover {
+  opacity: 1;
+}
+
+.ctaSection {
+  margin-top: 80px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.98) 100%
+  );
+  border-radius: 25px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #4a86e8, #6aa84f);
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaText h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+}
+
+.ctaText p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #4a86e8, #6aa84f);
+  color: #fff;
+  border: none;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(74, 134, 232, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(74, 134, 232, 0.4);
+  gap: 20px;
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.ctaButtonIcon {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .ctaButtonIcon {
+  transform: translateX(5px);
+}
+
+.ctaButtonEffect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.ctaButton:hover .ctaButtonEffect {
+  left: 100%;
+}
+
+@media (max-width: 992px) {
+  .requirements {
+    padding: 100px 0;
+  }
+
+  .mainTitle {
+    font-size: 2.8rem;
+  }
+
+  .requirementsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .requirements {
+    padding: 80px 0;
+  }
+
+  .mainTitle {
+    font-size: 2.3rem;
+  }
+
+  .mainSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .tabButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+  }
+
+  .tabButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    padding: 30px 20px;
+    margin-top: 60px;
+  }
+
+  .ctaText h2 {
+    font-size: 1.8rem;
+  }
+
+  .ctaButton {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .requirementCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .faqHeader {
+    padding: 20px;
+  }
+
+  .faqHeader h3 {
+    font-size: 1.1rem;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,73 @@
+/* src/components/Subscribe/Subscribe.module.css */
+.subscribe {
+  padding: 80px 20px;
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subscribeText {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.subscribeForm {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.subscribeInput {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 16px;
+}
+
+.subscribeButton {
+  padding: 0 30px;
+  background: #ff9e01;
+  color: #fff;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeButton:hover {
+  background: #e58f00;
+}
+
+@media (max-width: 768px) {
+  .subscribeForm {
+    flex-direction: column;
+  }
+  
+  .subscribeInput {
+    border-radius: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .subscribeButton {
+    border-radius: 50px;
+    padding: 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
