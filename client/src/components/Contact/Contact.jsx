@@ -26,8 +26,7 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Updated to use local backend
-      const response = await fetch("https://freshstarthouse.com/sendmail.php", {
+      const response = await fetch("https://gizachewm.com/sendmail.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

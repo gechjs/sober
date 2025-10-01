@@ -27,7 +27,7 @@ function App() {
       <Mission />
       <Services />
       <Requirements />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );
